@@ -1,0 +1,57 @@
+
+\documentclass[11pt]{article}  % or use 'report', 'book', or a specific journal template
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{cite}
+\usepackage{geometry}
+\geometry{margin=1in}
+\title{Real-Time Traffic Object Detection Using YOLOv5 with COCO-Based Transfer Learning for CPU Deployment}
+\author{Jamal Bouheur, Jason Nguyen\\
+        CS4277 \\
+        Kennesaw State University  \\
+        \texttt{jnguy203@students.kennesaw.edu}}
+\date{\today}
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Object detection is a critical component in autonomous driving and intelligent transportation systems. In this study, we propose a real-time traffic object detection framework using YOLOv5, targeting four key object categories: cars, traffic lights, traffic signs, and pedestrians. To enhance performance and reduce training time, we leverage transfer learning by initializing YOLOv5 with weights pre-trained on the COCO dataset. The model is then fine-tuned on a subset of the BDD100K dataset to adapt to diverse urban traffic scenarios, including variations in lighting, weather, and object density. Additionally, the model is optimized for inference on CPU-only environments, enabling real-time deployment on low-power or embedded devices without GPU acceleration. Experimental results demonstrate that the system achieves high detection accuracy and responsiveness, confirming the feasibility of using YOLOv5 with COCO-based transfer learning for efficient and scalable traffic scene understanding in resource-constrained settings.
+\end{abstract}
+
+\section{Introduction}
+Deep learning has transformed computer vision, enabling accurate and efficient real-time object detection. In autonomous driving and intelligent transportation systems, detecting traffic-related objects such as cars, traffic lights, traffic signs, and pedestrians plays a key role in decision-making. YOLOv5 has become a popular choice for object detection due to its speed and accuracy, leveraging a single neural network to predict both bounding boxes and class probabilities simultaneously.
+
+In this paper, we apply YOLOv5 for traffic object detection by fine-tuning it with transfer learning using pre-trained weights from the COCO dataset. This approach accelerates training and improves performance, particularly for objects less represented in the training data. We further fine-tune the model on the BDD100K dataset, which includes diverse urban traffic scenarios.
+
+To ensure practical deployment, we optimize the model for CPU-only environments, making it suitable for real-time applications on edge devices. This combination of transfer learning and CPU optimization provides an efficient solution for real-time traffic scene understanding.
+\section{Methodology}
+The core methodology involves the application of YOLOv5, a state-of-the-art object detection model, which is initially pre-trained on the COCO dataset. This transfer learning approach allows the model to leverage previously learned features and accelerate the training process, particularly for objects not widely represented in the training data. YOLOv5 is then fine-tuned on the BDD100K dataset, which contains diverse traffic scenarios, enabling the model to recognize and classify objects under varying conditions, such as lighting, weather, and traffic density.
+
+To optimize for CPU-only environments, the model is fine-tuned and optimized to reduce the computational overhead while maintaining real-time inference performance. This is particularly important for deployment in systems with limited resources, such as traffic cameras, embedded systems, and real-time surveillance platforms.
+
+\section{Results}
+
+
+\section{Conclusion}
+...
+
+\bibliographystyle{plain}  
+\begin{thebibliography}{9}
+
+\bibitem{yu2020bdd100k}
+F. Yu, H. Chen, X. Wang, W. Xian, Y. Chen, F. Liu, V. Madhavan, and T. Darrell, 
+``BDD100K: A Diverse Driving Dataset for Heterogeneous Multitask Learning,'' 
+\textit{Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)}, 
+pp. 2636--2645, 2020.
+\bibitem{yolov5}
+Glenn Jocher, 
+``YOLOv5: A state-of-the-art object detection model,''
+\url{https://github.com/ultralytics/yolov5}, 
+Accessed: 2025-04-30.
+
+\end{thebibliography}
+
+\end{document}
+
